@@ -1,0 +1,25 @@
+name: "gh-action-flutter-pubspec-set-version"
+description: "flutter pubspec set version"
+inputs:
+  file:
+    description: "path to pubspec.yaml file"
+    required: true
+    default: ""
+  major:
+    description: "int"
+    required: false
+    default: ""
+  minor:
+    description: "int"
+    required: false
+    default: ""
+  patch:
+    description: "int"
+    required: false
+    default: ""
+outputs:
+  yaml:
+    description: "yaml content"
+runs:
+  using: "node12"
+  main: "dist/index.js"
