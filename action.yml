@@ -3,8 +3,8 @@ description: "flutter pubspec set version"
 inputs:
   file:
     description: "path to pubspec.yaml file"
-    required: true
-    default: ""
+    required: false
+    default: "./pubspec.yaml"
   major:
     description: "int"
     required: false

@@ -11,14 +11,14 @@ function getValue(value, defaultValue) {
 }
 
 try {
-  const filePath = core.getInput("file");
+  const filePath = getValue(core.getInput("file"), "./pubspec.yaml");
   const major = core.getInput("major");
   const minor = core.getInput("minor");
   const patch = core.getInput("patch");
 
   var content = fs.readFileSync(filePath, "utf8");
 
-  const yaml = YAML.parse(list);
+  const yaml = YAML.parse(content);
   var split = yaml["version"].split(".");
   var version = {
     major: getValue(major, split[0]),
